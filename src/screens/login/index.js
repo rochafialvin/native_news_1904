@@ -1,7 +1,7 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {View, Text, Button} from 'react-native';
 
-function Login() {
+function Login({navigation}) {
   return (
     <View>
       <Text
@@ -10,9 +10,15 @@ function Login() {
           fontWeight: 'bold',
           textAlign: 'center',
           marginTop: 20,
+          marginBottom: 20,
         }}>
         Login Screen
       </Text>
+      <Button
+        onPress={() => navigation.navigate('Register')}
+        title="Go to register"
+        color="blue"
+      />
     </View>
   );
 }
