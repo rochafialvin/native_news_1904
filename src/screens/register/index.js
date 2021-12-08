@@ -1,13 +1,21 @@
 import React, {useState} from 'react';
 import {View, Text, TextInput, Button, StyleSheet} from 'react-native';
+import axios from '../../config/axios';
 
-export default function Register() {
+export default function Register({navigation}) {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const onRegisterPress = () => {
-    alert(JSON.stringify({username, email, password}));
+  const onRegisterPress = async () => {
+    try {
+      await axios.post('/users', {username, email, password});
+      alert('Berhasil register');
+    } catch (error) {}
+  };
+
+  const onNavigateLogin = () => {
+    navigation.navigate('Login');
   };
 
   return (
@@ -30,7 +38,9 @@ export default function Register() {
         secureTextEntry
       />
       <Button title="Login" color="#841584" onPress={onRegisterPress} />
-      <Text style={styles.navigateText}>Or Login </Text>
+      <Text onPress={onNavigateLogin} style={styles.navigateText}>
+        Or Login{' '}
+      </Text>
     </View>
   );
 }
