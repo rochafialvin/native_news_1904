@@ -1,14 +1,35 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {View, Text, TextInput, Button, StyleSheet} from 'react-native';
 
 export default function Register() {
+  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const onRegisterPress = () => {
+    alert(JSON.stringify({username, email, password}));
+  };
+
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Register Screen</Text>
-      <TextInput style={styles.input} />
-      <TextInput style={styles.input} />
-      <TextInput style={styles.input} />
-      <Button title="Login" color="#841584" />
+      <TextInput
+        placeholder="username"
+        style={styles.input}
+        onChangeText={setUsername}
+      />
+      <TextInput
+        placeholder="email"
+        style={styles.input}
+        onChangeText={setEmail}
+      />
+      <TextInput
+        placeholder="password"
+        style={styles.input}
+        onChangeText={setPassword}
+        secureTextEntry
+      />
+      <Button title="Login" color="#841584" onPress={onRegisterPress} />
       <Text style={styles.navigateText}>Or Login </Text>
     </View>
   );

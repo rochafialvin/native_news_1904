@@ -12,8 +12,8 @@ function App() {
   return (
     <NavigationContainer>
       <nativeStack.Navigator>
-        <nativeStack.Screen name="Login" component={Login} />
         <nativeStack.Screen name="Register" component={Register} />
+        <nativeStack.Screen name="Login" component={Login} />
       </nativeStack.Navigator>
     </NavigationContainer>
   );
