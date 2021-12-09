@@ -1,0 +1,15 @@
+- Native base adalah sebuah library penyedia komponen untuk mobile app.
+- Komponen native base memiliki banyak attribute yang memungkinkan kita untuk melakukan styling tanpa perlu membuatnya dahulu menggunakan Object StyleSheet dari react-native.
+- Pada komponenn image background, jika gambarnya berasal dari link eksternal maka gunakanlah object dengan property uri, contoh : {uri: "http://gambar.com/person}. Tapi jika sumber gambar berada di dalam project maka gunakanlah require: require('../assets/images/news-1.jpg)
+- Komponen Flex merupakan sebuah wrapper (pembungkus) yang sudah secara default menerapkan flexbox (display : flexbox)
+- Untuk mengurangi pengulangan code saat membuat komponen, kita dapat membuat reusable komponen, dan jangan lupa untuk menambahkan {...props} pada bagian akhir dari attribute komponen
+- Terdapat dua model navigasi : Stack dan Tab
+- Stack navigasi akan memiliki header secara default, yang mana akan muncul icon back untuk kembali ke halaman sebelumnya. Disini berlaku sistem tumpuk sesuai yang dibahas di kelas.
+- Tab navigasi memungkinkan kita untuk dapat memiliki tab menu dibagian bawah ataupun atas layar, dan setiap tab dapat memiliki icon.
+- Gunakan semacam penentu untuk navigasi mana yang dapat diakses berdasarkan status login (sudah / belum)
+- NewAPI adalah service penyedia berita. Untuk akun developer (free) maksimal 100 requests / hari
+- Untuk membuka debugger dapat dengan cara sebagai berikut
+  1. Klik layar handphone
+  2. Tekan CTRL + M untuk membukan DevMenu
+  3. Pilih menu debug
+  4. PENTING !!! jangan lupa di matikan sebelum udahan. Caranya dengan kembali membuka DevMenu dengan CTRL+M lalu pilih Stop Debugger
