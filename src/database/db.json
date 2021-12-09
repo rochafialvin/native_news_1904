@@ -5,6 +5,12 @@
       "email": "rochafi@mail.com",
       "password": "password",
       "id": 1
+    },
+    {
+      "username": "Halamn baru nih",
+      "email": "iyanih@gmail.com",
+      "password": "mantapnih",
+      "id": 2
     }
   ]
 }

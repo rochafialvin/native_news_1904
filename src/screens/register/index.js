@@ -35,11 +35,8 @@ export default function Register({navigation}) {
           placeholder="Password"
           secureTextEntry
         />
-        <AuthButton title="Register" />
-        <AuthNavigateText
-          title="Or Login"
-          onPress={() => navigation.navigate('Login')}
-        />
+        <AuthButton title="Register" onPress={onRegisterPress} />
+        <AuthNavigateText title="Or Login" onPress={onNavigateLogin} />
       </Flex>
     </Flex>
   );
