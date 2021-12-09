@@ -1,10 +1,11 @@
 import React from 'react';
 import {ImageBackground} from 'react-native';
 import {Flex, Heading, Button} from 'native-base';
-import AuthButton from '../../components/AuthButton';
+
+import AuthButton from '../../../components/AuthButton';
 
 // menggunakan require karena file gambar diambil dari dalam project
-const image = require('../../assets/images/news-1.jpg');
+const image = require('../../../assets/images/news-1.jpg');
 
 const LandingScreen = ({navigation}) => {
   return (

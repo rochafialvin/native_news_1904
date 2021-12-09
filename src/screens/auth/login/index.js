@@ -1,10 +1,10 @@
 import React, {useState} from 'react';
 import {Flex, Heading} from 'native-base';
-import axios from '../../config/axios';
+import axios from '../../../config/axios';
 
-import AuthInput from '../../components/AuthInput';
-import AuthButton from '../../components/AuthButton';
-import AuthNavigateText from '../../components/AuthNavigateText';
+import AuthButton from '../../../components/AuthButton';
+import AuthInput from '../../../components/AuthInput';
+import AuthNavigateText from '../../../components/AuthNavigateText';
 
 export default function Login({navigation}) {
   const [username, setUsername] = useState('');
