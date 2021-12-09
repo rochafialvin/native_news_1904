@@ -1,6 +1,7 @@
 import React from 'react';
 import {ImageBackground} from 'react-native';
 import {Flex, Heading, Button} from 'native-base';
+import AuthButton from '../../components/AuthButton';
 
 // menggunakan require karena file gambar diambil dari dalam project
 const image = require('../../assets/images/news-1.jpg');
@@ -18,32 +19,19 @@ const LandingScreen = ({navigation}) => {
           Flash News
         </Heading>
         <Flex h="17%" justify="space-between">
-          <Button
-            borderRadius="10"
-            borderWidth="3"
-            borderColor="primary.500"
+          <AuthButton
+            title="Login"
             bg="transparent"
-            p="1.5"
-            _text={{
-              fontSize: '18',
-            }}
             onPress={() => {
               navigation.navigate('Login');
-            }}>
-            Login
-          </Button>
-          <Button
-            borderRadius="10"
-            borderWidth="3"
-            borderColor="primary.500"
-            _text={{
-              fontSize: '18',
             }}
+          />
+          <AuthButton
+            title="Register"
             onPress={() => {
               navigation.navigate('Register');
-            }}>
-            Register
-          </Button>
+            }}
+          />
         </Flex>
       </Flex>
     </ImageBackground>
