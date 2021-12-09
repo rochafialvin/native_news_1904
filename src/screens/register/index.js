@@ -1,6 +1,10 @@
 import React, {useState} from 'react';
-import {View, Text, TextInput, Button, StyleSheet} from 'react-native';
+import {Flex, Heading} from 'native-base';
 import axios from '../../config/axios';
+
+import AuthInput from '../../components/AuthInput';
+import AuthButton from '../../components/AuthButton';
+import AuthNavigateText from '../../components/AuthNavigateText';
 
 export default function Register({navigation}) {
   const [username, setUsername] = useState('');
@@ -19,55 +23,24 @@ export default function Register({navigation}) {
   };
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Register Screen</Text>
-      <TextInput
-        placeholder="username"
-        style={styles.input}
-        onChangeText={setUsername}
-      />
-      <TextInput
-        placeholder="email"
-        style={styles.input}
-        onChangeText={setEmail}
-      />
-      <TextInput
-        placeholder="password"
-        style={styles.input}
-        onChangeText={setPassword}
-        secureTextEntry
-      />
-      <Button title="Login" color="#841584" onPress={onRegisterPress} />
-      <Text onPress={onNavigateLogin} style={styles.navigateText}>
-        Or Login
-      </Text>
-    </View>
+    <Flex w="80%" h="50%" m="auto" justify="space-between">
+      <Heading textAlign="center" fontSize="30" letterSpacing="2">
+        Register
+      </Heading>
+      <Flex>
+        <AuthInput onChangeText={setUsername} placeholder="Username" />
+        <AuthInput onChangeText={setEmail} placeholder="Email" />
+        <AuthInput
+          onChangeText={setPassword}
+          placeholder="Password"
+          secureTextEntry
+        />
+        <AuthButton title="Register" />
+        <AuthNavigateText
+          title="Or Login"
+          onPress={() => navigation.navigate('Login')}
+        />
+      </Flex>
+    </Flex>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    width: '80%',
-    marginLeft: 'auto',
-    marginRight: 'auto',
-  },
-  title: {
-    textAlign: 'center',
-    fontSize: 25,
-    fontWeight: 'bold',
-    marginBottom: 20,
-  },
-  input: {
-    height: 40,
-    marginBottom: 12,
-    borderWidth: 1,
-    borderRadius: 7,
-    padding: 10,
-  },
-  navigateText: {
-    marginTop: 10,
-    fontWeight: 'bold',
-    fontSize: 17,
-  },
-});

@@ -17,7 +17,7 @@ function App() {
       <NavigationContainer>
         <Navigator
           screenOptions={{headerShown: false}}
-          initialRouteName="Landing">
+          initialRouteName="Register">
           <Screen name="Register" component={RegisterScreen} />
           <Screen name="Login" component={LoginScreen} />
           <Screen name="Landing" component={LandingScreen} />
