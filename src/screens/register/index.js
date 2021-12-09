@@ -39,7 +39,7 @@ export default function Register({navigation}) {
       />
       <Button title="Login" color="#841584" onPress={onRegisterPress} />
       <Text onPress={onNavigateLogin} style={styles.navigateText}>
-        Or Login{' '}
+        Or Login
       </Text>
     </View>
   );
