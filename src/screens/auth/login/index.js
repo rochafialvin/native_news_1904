@@ -6,7 +6,7 @@ import AuthButton from '../../../components/AuthButton';
 import AuthInput from '../../../components/AuthInput';
 import AuthNavigateText from '../../../components/AuthNavigateText';
 
-export default function Login({navigation}) {
+export default function LoginScreen({navigation}) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 

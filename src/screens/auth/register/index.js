@@ -6,7 +6,7 @@ import AuthButton from '../../../components/AuthButton';
 import AuthInput from '../../../components/AuthInput';
 import AuthNavigateText from '../../../components/AuthNavigateText';
 
-export default function Register({navigation}) {
+export default function RegisterScreen({navigation}) {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
