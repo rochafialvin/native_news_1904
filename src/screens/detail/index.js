@@ -5,10 +5,15 @@ export default function DetailScreen({route, navigation}) {
   const {article} = route.params;
 
   return (
-    <ScrollView>
-      <Box flex="1" px="2" pt="1">
-        <Image alt="image" source={{uri: article.urlToImage}} />
-        <Box>
+    <ScrollView flex="1">
+      <Box flex="1" px="2" pt="1" rounded="md" bg="coolGray.100">
+        <Image
+          h="40%"
+          alt="image"
+          source={{uri: article.urlToImage}}
+          borderTopRadius="md"
+        />
+        <Box mt="-10" bg="coolGray.100" borderTopRadius="10" p="3">
           <Stack
             pb="2"
             mb="3"
@@ -45,7 +50,7 @@ export default function DetailScreen({route, navigation}) {
               lewat keterangan resmi. Rionny menjelaskan, PBSI tak ingin
               mengambil risiko. Semua demi keselamatan para atlet dan disetujui
               oleh para atlet Indonesia. "Kami tidak mau mengambil resiko.
-              Keselamatan dan kesehatan atlet lebih utama.
+              Keselamatan dan kesehatan atlet lebih utama. Disini
             </Text>
             <Text>
               Para pemain juga sudah kami ajak berdiskusi dan mereka setuju
