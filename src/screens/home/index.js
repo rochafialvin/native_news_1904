@@ -45,7 +45,7 @@ export default function HomeScreen({navigation}) {
         <FlatList
           data={articles}
           renderItem={({item}) => {
-            return <ArticleItem article={item} />;
+            return <ArticleItem navigation={navigation} article={item} />;
           }}
           keyExtractor={item => {
             return item.title;
