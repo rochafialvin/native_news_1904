@@ -10,7 +10,7 @@ import {
 } from 'native-base';
 import {apiNews} from '../../config/axios';
 
-import AuthInput from '../../components/AuthInput';
+import ArticleItem from './components/ArticleItem';
 
 export default function HomeScreen({navigation}) {
   const [keyword, setKeyword] = useState('');
@@ -45,8 +45,7 @@ export default function HomeScreen({navigation}) {
         <FlatList
           data={articles}
           renderItem={({item}) => {
-            const {title, source} = item;
-            return <Text>{title}</Text>;
+            return <ArticleItem article={item} />;
           }}
           keyExtractor={item => {
             return item.title;
