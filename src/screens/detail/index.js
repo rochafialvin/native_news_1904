@@ -28,7 +28,7 @@ export default function DetailScreen({route, navigation}) {
               <Text color="primary.500"> | {article.source.name}</Text>
             </Stack>
           </Stack>
-          <Stack space="4">
+          <Stack space="2">
             <Text>
               <Text fontWeight="bold">VIVA</Text> – BWF World Championships atau
               Kejuaraan Dunia 2021 segera bergulir. Dimulai 12 berakhir 19
