@@ -1,0 +1,5 @@
+How to run react native project
+
+0. Running emulator
+1. npm start --> metro server
+2. npm run android --> launch app --> checking emulator

@@ -1,11 +1,20 @@
 import React, {useState} from 'react';
-import {Box, Text, Button, Input} from 'native-base';
+import {
+  Box,
+  Text,
+  Button,
+  Input,
+  FlatList,
+  Flex,
+  ScrollView,
+} from 'native-base';
 import {apiNews} from '../../config/axios';
 
 import AuthInput from '../../components/AuthInput';
 
 export default function HomeScreen({navigation}) {
   const [keyword, setKeyword] = useState('');
+  const [articles, setArticles] = useState([]);
 
   const fetchNews = async () => {
     try {
@@ -14,22 +23,36 @@ export default function HomeScreen({navigation}) {
           apiKey: 'c7a94f6e229f477a9a5471f8125fa296',
           q: keyword,
           language: 'id',
-          pageSize: 5,
-          page: 1,
+          page: 2,
         },
       });
 
-      console.log(res.data);
+      setArticles(res.data.articles);
     } catch (error) {
       alert('Terjadi kesalahan');
+      console.log({error});
     }
   };
 
   return (
-    <Box>
-      <Text> Home Screen </Text>
-      <AuthInput onChangeText={setKeyword} />
-      <Button onPress={fetchNews}>Search</Button>
-    </Box>
+    <Flex flex="1" px="1" pt="1">
+      <Input onChangeText={setKeyword} fontSize="16" mb="1" />
+      <Button onPress={fetchNews} fontSize="16">
+        Search
+      </Button>
+
+      <Flex>
+        <FlatList
+          data={articles}
+          renderItem={({item}) => {
+            const {title, source} = item;
+            return <Text>{title}</Text>;
+          }}
+          keyExtractor={item => {
+            return item.title;
+          }}
+        />
+      </Flex>
+    </Flex>
   );
 }
