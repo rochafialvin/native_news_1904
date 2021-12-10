@@ -3,16 +3,15 @@ import {NavigationContainer} from '@react-navigation/native';
 import {NativeBaseProvider} from 'native-base';
 
 import AuthNavigation from './src/navigation/auth';
-
-import Main from './src/screens';
+import MainNavigation from './src/navigation/main';
 
 function App() {
-  const isSignedIn = false;
+  const isSignedIn = true;
 
   return (
     <NativeBaseProvider>
       <NavigationContainer>
-        {isSignedIn ? <Main /> : <AuthNavigation />}
+        {isSignedIn ? <MainNavigation /> : <AuthNavigation />}
       </NavigationContainer>
     </NativeBaseProvider>
   );
