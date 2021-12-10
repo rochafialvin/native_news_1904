@@ -8,3 +8,5 @@
 
 
 - ide untuk latihan :
+  1. Tidak dapat register menggunakan username yang sudah terdaftar
+  2. Pada komponen app, penentu untuk masuk ke main app masih menggunakan boolean, coba manfaatkan value dari redux untuk mengganti boolean.
