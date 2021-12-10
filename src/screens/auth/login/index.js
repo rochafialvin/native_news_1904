@@ -1,19 +1,30 @@
 import React, {useState} from 'react';
 import {Flex, Heading} from 'native-base';
 import axios from '../../../config/axios';
+import {useDispatch} from 'react-redux';
+
+import {loginActionCreator} from '../../../store/actions';
 
 import AuthButton from '../../../components/AuthButton';
 import AuthInput from '../../../components/AuthInput';
 import AuthNavigateText from '../../../components/AuthNavigateText';
 
 export default function LoginScreen({navigation}) {
+  const dispatch = useDispatch();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
   const onLoginPress = async () => {
     try {
-      // await axios.post('/users', {username, email, password});
-      alert('Berhasil login');
+      const res = await axios.get('/users', {params: {username, password}});
+      if (res.data.length) {
+        const {id, username} = res.data[0];
+        const action = loginActionCreator({id, username});
+        dispatch(action);
+        alert('Berhasil login gan');
+      } else {
+        alert('Username atau Password salah');
+      }
     } catch (error) {}
   };
 

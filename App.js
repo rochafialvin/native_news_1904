@@ -8,7 +8,7 @@ import AuthNavigation from './src/navigation/auth';
 import MainNavigation from './src/navigation/main';
 
 function App() {
-  const isSignedIn = true;
+  const isSignedIn = false;
 
   return (
     <Provider store={store}>

@@ -1,0 +1,10 @@
+- View tidak dapat digunakan untuk scrolling tampilan, artinya jika data melebihi layar maka dia tidak bisa kita lihat.
+- ScrollView adalah solusi dari View yang tidak bisa di scroll. Gunakan komponen ini agar tampilan yang terpotong dibawah layar bisa di tarik ke atas.
+- Tapi jika membuat sebuah list, gunakanlah komponen FlatList, karena dia bekerja lebih cerdas yaitu dengan hanya memproses list yang memang akan tampil, sisanya akan diproses jika memang baru akan tampil.
+- Stack adalah komponen yang dapat mengatur arah susunan komponen di dalamnya baik secara vertikal (column : default) atau horizontal (row)
+- Stack juga memiliki props "space" berguna untuk menentukan jarak antar child (komponen yang berada didalam Stack)
+- Setup Redux di react native 100% sama dengan react js kemarin.
+- Jika pada react js kita mengenal extension redux devtools, maka di react native kita menggunakan react native debugger. https://github.com/jhen0409/react-native-debugger/blob/master/docs/getting-started.md
+
+
+- ide untuk latihan :
