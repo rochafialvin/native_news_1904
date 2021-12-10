@@ -5,10 +5,10 @@ export default function DetailScreen({route, navigation}) {
   const {article} = route.params;
 
   return (
-    <ScrollView flex="1">
-      <Box flex="1" px="2" pt="1" rounded="md" bg="coolGray.100">
+    <ScrollView>
+      <Box px="2" pt="1" rounded="md" bg="coolGray.100">
         <Image
-          h="40%"
+          h="300"
           alt="image"
           source={{uri: article.urlToImage}}
           borderTopRadius="md"
