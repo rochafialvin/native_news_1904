@@ -3,3 +3,14 @@ How to run react native project
 0. Running emulator
 1. npm start --> metro server
 2. npm run android --> launch app --> checking emulator
+
+
+
+RE-BUILD
+
+1. Buka terminal
+2. Matikan server metro dengan shortkey "CTRL + C"
+3. Masuk ke dalam folder android dengan perintah "cd android"
+4. Hapus build yang saat ini digunakan dengan perintah "./gradlew clean" lalu tunggu.
+5. Keluar dari folder android dengan perintah "cd ../"
+6. Jalankan ulang dengan perintah "npm start" lalu "npm run android", Pastikan emulatornya sudah berjalan
