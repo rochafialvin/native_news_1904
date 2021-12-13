@@ -5,3 +5,7 @@ export const loginActionCreator = userData => {
     payload: userData,
   };
 };
+
+export const logoutActionCreator = () => {
+  return {type: 'LOGOUT_SUCCESS'};
+};
