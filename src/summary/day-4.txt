@@ -5,3 +5,4 @@
 5. Sempatkan baca dokumentasi terlebih dahulu sebelum menggunakan library, ini akan dapat menyelamatkan banyak waktu.
 6. Custom icon dapat kita lakukan dengan dua cara:
     1. Dengan mendefinisikan di setiap komponent screen pada bagian navigasi
+    2. Dengan mendefinisikan pada komponen parent (Navigator)
