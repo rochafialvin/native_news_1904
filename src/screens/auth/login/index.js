@@ -1,7 +1,8 @@
 import React, {useState} from 'react';
+import {useDispatch} from 'react-redux';
 import {Flex, Heading} from 'native-base';
 import axios from '../../../config/axios';
-import {useDispatch} from 'react-redux';
+import EncryptedStorage from 'react-native-encrypted-storage';
 
 import {loginActionCreator} from '../../../store/actions';
 
@@ -18,7 +19,14 @@ export default function LoginScreen({navigation}) {
     try {
       const res = await axios.get('/users', {params: {username, password}});
       if (res.data.length) {
+        // extract data
         const {id, username} = res.data[0];
+        // menyimpan data di storage
+        await EncryptedStorage.setItem(
+          'userData',
+          JSON.stringify({id, username}),
+        );
+        // menyimpan data di redux store
         const action = loginActionCreator({id, username});
         dispatch(action);
         alert('Berhasil login gan');
@@ -30,6 +38,20 @@ export default function LoginScreen({navigation}) {
 
   const onNavigateRegister = () => {
     navigation.navigate('Register');
+  };
+
+  const getStorageData = async () => {
+    try {
+      const encryptedUser = await EncryptedStorage.getItem('userData');
+
+      if (encryptedUser) {
+        console.log('Data berhasil ditemukan');
+      }
+
+      console.log({encryptedUser});
+    } catch (error) {
+      // There was an error on the native side
+    }
   };
 
   return (
@@ -45,7 +67,7 @@ export default function LoginScreen({navigation}) {
           secureTextEntry
         />
         <AuthButton title="Login" onPress={onLoginPress} />
-        <AuthNavigateText title="Or Register" onPress={onNavigateRegister} />
+        <AuthNavigateText title="Or Register" onPress={getStorageData} />
       </Flex>
     </Flex>
   );
