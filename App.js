@@ -1,20 +1,17 @@
 import React from 'react';
-import {NavigationContainer} from '@react-navigation/native';
-import {NativeBaseProvider} from 'native-base';
-import {Provider} from 'react-redux';
 import store from './src/store';
+import {Provider} from 'react-redux';
+import {NativeBaseProvider} from 'native-base';
+import {NavigationContainer} from '@react-navigation/native';
 
-import AuthNavigation from './src/navigation/auth';
-import MainNavigation from './src/navigation/main';
+import InitialNavigation from './src/navigation/initial';
 
 function App() {
-  const isSignedIn = false;
-
   return (
     <Provider store={store}>
       <NativeBaseProvider>
         <NavigationContainer>
-          {isSignedIn ? <MainNavigation /> : <AuthNavigation />}
+          <InitialNavigation />
         </NavigationContainer>
       </NativeBaseProvider>
     </Provider>

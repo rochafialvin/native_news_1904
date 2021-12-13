@@ -40,20 +40,6 @@ export default function LoginScreen({navigation}) {
     navigation.navigate('Register');
   };
 
-  const getStorageData = async () => {
-    try {
-      const encryptedUser = await EncryptedStorage.getItem('userData');
-
-      if (encryptedUser) {
-        console.log('Data berhasil ditemukan');
-      }
-
-      console.log({encryptedUser});
-    } catch (error) {
-      // There was an error on the native side
-    }
-  };
-
   return (
     <Flex w="80%" h="50%" m="auto" justify="space-between">
       <Heading textAlign="center" fontSize="30" letterSpacing="2">
@@ -67,7 +53,7 @@ export default function LoginScreen({navigation}) {
           secureTextEntry
         />
         <AuthButton title="Login" onPress={onLoginPress} />
-        <AuthNavigateText title="Or Register" onPress={getStorageData} />
+        <AuthNavigateText title="Or Register" onPress={onNavigateRegister} />
       </Flex>
     </Flex>
   );
