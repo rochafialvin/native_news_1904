@@ -1,0 +1,7 @@
+1. Untuk menyimpan data login user kita menggunakan react-native-encrypted-storage layaknya kita menggunkan localStorage di web browser. Dibandingkan dengan async storage, data yang disimpan akan di enkripsi terlebih dahulu.
+2. Ketika hendak melakukan suatu operasi terhadap redux pada suatu komponen, pastikan komponen tersebut dibalut (wrapped) oleh component Provider.
+3. Jika ada error, sempatkan waktu untuk membaca errornya sehingga tahu dimana masalahnya.
+4. Beberapa kasus, jika kita menginstall library maka dibutuhkan me restrart project (npm start dan npm run android ulang) atau bahkan me rebuild (gradlew, lebih jelasnya coba buka file note.txt).
+5. Sempatkan baca dokumentasi terlebih dahulu sebelum menggunakan library, ini akan dapat menyelamatkan banyak waktu.
+6. Custom icon dapat kita lakukan dengan dua cara:
+    1. Dengan mendefinisikan di setiap komponent screen pada bagian navigasi
