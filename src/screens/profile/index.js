@@ -116,7 +116,7 @@ export default function ProfileScreen({navigation}) {
         borderWidth="1"
         borderColor="gray.500"
         onPress={() => {
-          navigation.navigate('EditProfile');
+          navigation.navigate('EditProfile', {profile});
         }}>
         <Text color="black">Edit Profile</Text>
       </Button>
