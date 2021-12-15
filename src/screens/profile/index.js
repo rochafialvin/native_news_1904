@@ -43,7 +43,7 @@ export default function ProfileScreen({navigation}) {
           <Icon name="menu" size={30} />
         </HStack>
       </Flex>
-      <HStack mt="5">
+      <HStack my="5">
         <View width="30%">
           <Image
             style={{width: 100, height: 100}}
@@ -78,6 +78,21 @@ export default function ProfileScreen({navigation}) {
           </Stack>
         </Flex>
       </HStack>
+      <Stack>
+        <Text fontWeight="bold">Alvin</Text>
+        <Text>Kalau orang lain tidak bisa. Apalagi saya</Text>
+        <Text color="blue.900">www.purwadhika.com</Text>
+      </Stack>
+      <Button
+        mt="2"
+        w="100%"
+        py="1"
+        h="8"
+        bg="transparent"
+        borderWidth="1"
+        borderColor="gray.500">
+        <Text color="black">Edit Profile</Text>
+      </Button>
     </Flex>
   );
 }
