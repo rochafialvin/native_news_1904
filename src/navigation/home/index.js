@@ -9,7 +9,11 @@ import DetailScreen from '../../screens/detail';
 export default function HomeStackNavigation() {
   return (
     <Navigator initialRouteName="Home">
-      <Screen name="Home" component={HomeScreen} />
+      <Screen
+        name="Home"
+        component={HomeScreen}
+        options={{headerShown: false}}
+      />
       <Screen name="Detail" component={DetailScreen} />
     </Navigator>
   );

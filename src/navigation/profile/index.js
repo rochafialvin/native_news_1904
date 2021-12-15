@@ -9,7 +9,11 @@ import FavoriteScreen from '../../screens/profile';
 export default function ProfileStackNavigation() {
   return (
     <Navigator initialRouteName="Profile">
-      <Screen name="Profile" component={ProfileScreen} />
+      <Screen
+        name="Profile"
+        component={ProfileScreen}
+        options={{headerShown: false}}
+      />
       <Screen name="Favorite" component={FavoriteScreen} />
     </Navigator>
   );
