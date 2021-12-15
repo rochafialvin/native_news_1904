@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {
   Flex,
   View,
@@ -9,13 +9,37 @@ import {
   Heading,
   HStack,
 } from 'native-base';
-import {useDispatch} from 'react-redux';
+import axios from '../../config/axios';
+import {useDispatch, useSelector} from 'react-redux';
 import {logoutActionCreator} from '../../store/actions';
 import EncryptedStorage from 'react-native-encrypted-storage';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 export default function ProfileScreen({navigation}) {
   const dispacth = useDispatch();
+  const id = useSelector(state => state.auth.id);
+  const [profile, setProfile] = useState({
+    username: '',
+    name: '',
+    bio: '',
+    website: '',
+  });
+
+  useEffect(() => {
+    fetchProfile();
+  }, []);
+
+  const fetchProfile = async () => {
+    try {
+      const res = await axios.get(`/users/${id}`);
+
+      const {username, name, bio, website} = res.data;
+      setProfile({username, name, bio, website});
+    } catch (error) {
+      alert('Terjadi kesalahan');
+      console.log({error});
+    }
+  };
 
   const removeUserSession = async () => {
     try {
@@ -37,7 +61,7 @@ export default function ProfileScreen({navigation}) {
   return (
     <Flex flex="1" px="2" py="3">
       <Flex direction="row" justify="space-between">
-        <Heading>rochafi</Heading>
+        <Heading>{profile.username}</Heading>
         <HStack space="4">
           <Icon name="plus-box-outline" size={30} />
           <Icon name="menu" size={30} />
@@ -79,9 +103,9 @@ export default function ProfileScreen({navigation}) {
         </Flex>
       </HStack>
       <Stack>
-        <Text fontWeight="bold">Alvin</Text>
-        <Text>Kalau orang lain tidak bisa. Apalagi saya</Text>
-        <Text color="blue.900">www.purwadhika.com</Text>
+        <Text fontWeight="bold">{profile.name}</Text>
+        <Text>{profile.bio}</Text>
+        <Text color="blue.900">{profile.website}</Text>
       </Stack>
       <Button
         mt="2"

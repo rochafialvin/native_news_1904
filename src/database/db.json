@@ -4,13 +4,10 @@
       "username": "rochafi",
       "email": "rochafi@mail.com",
       "password": "password",
+      "name": "Alvin",
+      "website": "www.purwadhika.com",
+      "bio": "Kalau orang lain tidak bisa. Apalagi saya",
       "id": 1
-    },
-    {
-      "username": "Halamn baru nih",
-      "email": "iyanih@gmail.com",
-      "password": "mantapnih",
-      "id": 2
     }
   ]
 }
