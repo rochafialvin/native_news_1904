@@ -13,8 +13,9 @@ export default function MainNavigation() {
     <Navigator
       initialRouteName="HomeStack"
       screenOptions={({route}) => ({
-        tabBarIcon: ({focused, color}) => {
+        tabBarIcon: ({focused}) => {
           let iconName;
+          const color = focused ? '#ffffff' : 'gray';
 
           // name yang kita gunakan pada component screen dibawah
           switch (route.name) {
