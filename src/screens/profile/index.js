@@ -74,9 +74,8 @@ export default function ProfileScreen({navigation}) {
             style={{width: 100, height: 100}}
             mx="auto"
             rounded="full"
-            source={{
-              uri: 'https://wallpaperaccess.com/full/317501.jpg',
-            }}
+            key={profile.photo}
+            source={{uri: profile.photo}}
             alt="Alternate Text"
             size="xl"
           />

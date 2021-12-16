@@ -1,4 +1,6 @@
 import React, {useState} from 'react';
+import axios from '../../config/axios';
+import {useSelector} from 'react-redux';
 import {Input, Image, Text, Heading, Flex, HStack, View} from 'native-base';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import {CommonActions} from '@react-navigation/native';
@@ -6,12 +8,12 @@ import DocumentPicker from 'react-native-document-picker';
 
 export default function EditProfileScreen({route, navigation}) {
   const {profile} = route.params;
+  const userId = useSelector(state => state.auth.id);
   const [username, setUsername] = useState(profile.username);
   const [name, setName] = useState(profile.name);
   const [website, setWebsite] = useState(profile.website);
   const [bio, setBio] = useState(profile.bio);
   const [photo, setPhoto] = useState(profile.photo);
-  console.log({photo});
 
   const onChangePicturePress = async () => {
     try {
@@ -30,6 +32,22 @@ export default function EditProfileScreen({route, navigation}) {
     }
   };
 
+  const onSaveEditPress = async () => {
+    try {
+      await axios.patch(`/users/${userId}`, {
+        username,
+        name,
+        website,
+        bio,
+        photo,
+      });
+      alert('Berhasil update data');
+    } catch (error) {
+      alert('Terjadi masalah');
+      console.log({error});
+    }
+  };
+
   return (
     <Flex flex="1" px="2" py="3">
       <Flex direction="row" justify="space-between">
@@ -43,7 +61,7 @@ export default function EditProfileScreen({route, navigation}) {
           />
           <Heading>Edit Profile</Heading>
         </HStack>
-        <Icon name="check" size={30} color="blue" />
+        <Icon name="check" size={30} color="blue" onPress={onSaveEditPress} />
       </Flex>
       <Flex align="center" my="5">
         <Image
