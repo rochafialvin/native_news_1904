@@ -10,5 +10,67 @@
       "photo": "content://com.android.providers.downloads.documents/document/msf%3A24",
       "id": 1
     }
+  ],
+  "favourites": [
+    {
+      "source": {
+        "id": null,
+        "name": "Katalogpromosi.com"
+      },
+      "author": "katalogpromosi_admin",
+      "title": "BARU! Nasi Goreng Capcay dari Sapo Oriental – Harga Spesial cuma Rp 35.000",
+      "description": "BARU! Nasi Goreng Capcay dari Sapo Oriental – Harga Spesial cuma Rp 35.000 Hai Foodies, Siapa nih yang sudah cobain salah satu menu barunya Sapo Oriental, Nasi Goreng Capcay. Mumpung… \nThe post BARU! Nasi Goreng Capcay dari Sapo Oriental – Harga Spesial cuma …",
+      "url": "https://katalogpromosi.com/baru-nasi-goreng-capcay-dari-sapo-oriental-harga-spesial-cuma-rp-35-000/",
+      "urlToImage": "https://katalogpromosi.com/wp-content/uploads/2021/06/Sapo-Oriental-.jpg",
+      "publishedAt": "2021-11-16T03:51:21Z",
+      "content": "Katalogpromosi.com Ada Sebuah Situs yang bertujuan memberikan informasi promosi terupdate khusus buat kalian para pencinta Diskon di Indonesia\r\nMulai dari Info Diskon, Promo, Sale, Event terkini hing… [+198 chars]",
+      "userId": 1,
+      "id": 1
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "Katalogpromosi.com"
+      },
+      "author": "katalogpromosi_admin",
+      "title": "Geprek Bensu Promo Bundling Kenyang 2 Ayam + 1 Nasi + Garpu Hanya 30.000 dengan Qris BNI & Mobile Banking",
+      "description": "Geprek Bensu Promo Bundling Kenyang 2 Ayam + 1 Nasi + Garpu Hanya 30.000 dengan Qris BNI & Mobile Banking, berlaku setap hari Rabu Promo menggunakan Qris BNI & Mobile… \nThe post Geprek Bensu Promo Bundling Kenyang 2 Ayam + 1 Nasi + Garpu Hanya 30.000 dengan Q…",
+      "url": "https://katalogpromosi.com/geprek-bensu-promo-bundling-kenyang-2-ayam-1-nasi-garpu-hanya-30-000-dengan-qris-bni-mobile-banking/",
+      "urlToImage": "https://katalogpromosi.com/wp-content/uploads/2021/07/Geprek-Bensu-2.jpg",
+      "publishedAt": "2021-12-01T03:48:05Z",
+      "content": "Katalogpromosi.com Ada Sebuah Situs yang bertujuan memberikan informasi promosi terupdate khusus buat kalian para pencinta Diskon di Indonesia\r\nMulai dari Info Diskon, Promo, Sale, Event terkini hing… [+198 chars]",
+      "userId": 1,
+      "id": 2
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "Katalogpromosi.com"
+      },
+      "author": "katalogpromosi_editor",
+      "title": "Padang Merdeka & Nasi Kapau Merdeka Promo Birthday Treats – Diskon 20% khusus untuk yang Berulang Tahun di Bulan Desember 2021",
+      "description": "Padang Merdeka & Nasi Kapau Merdeka Promo Birthday Treats – Diskon 20% khusus untuk yang Berulang Tahun di Bulan Desember 2021 Birthday surpise untuk Sobat PaMer yang berulang tahun di… \nThe post Padang Merdeka & Nasi Kapau Merdeka Promo Birthday Treats – Dis…",
+      "url": "https://katalogpromosi.com/padang-merdeka-nasi-kapau-merdeka-promo-birthday-treats-diskon-20-khusus-untuk-yang-berulang-tahun-di-bulan-desember-2021/",
+      "urlToImage": "https://katalogpromosi.com/wp-content/uploads/2021/09/Padang-Merdeka-1.jpg",
+      "publishedAt": "2021-12-08T02:44:29Z",
+      "content": "Katalogpromosi.com Ada Sebuah Situs yang bertujuan memberikan informasi promosi terupdate khusus buat kalian para pencinta Diskon di Indonesia\r\nMulai dari Info Diskon, Promo, Sale, Event terkini hing… [+198 chars]",
+      "userId": 1,
+      "id": 3
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "Katalogpromosi.com"
+      },
+      "author": "editor katalogpromosi",
+      "title": "Promo Warung Wardani Special Deals – Harga Spesial Nasi Bakar Khas Bali mulai Rp 20.000 khusus pemesanan via GoFood & ShopeeFood",
+      "description": "Promo Warung Wardani Special Deals – Harga Spesial Nasi Bakar Khas Bali mulai Rp 20.000 khusus pemesanan via GoFood & ShopeeFood Kulineran Bali dimanapiun kamu berada  Hello Mbok Bli!… \nThe post Promo Warung Wardani Special Deals – Harga Spesial Nasi Bakar …",
+      "url": "https://katalogpromosi.com/promo-warung-wardani-special-deals-harga-spesial-nasi-bakar-khas-bali-mulai-rp-20-000-khusus-pemesanan-via-gofood-shopeefood/",
+      "urlToImage": "https://katalogpromosi.com/wp-content/uploads/2021/11/Warung-Wardani-1-1.jpg",
+      "publishedAt": "2021-12-08T05:23:13Z",
+      "content": "Katalogpromosi.com Ada Sebuah Situs yang bertujuan memberikan informasi promosi terupdate khusus buat kalian para pencinta Diskon di Indonesia\r\nMulai dari Info Diskon, Promo, Sale, Event terkini hing… [+198 chars]",
+      "userId": 1,
+      "id": 4
+    }
   ]
 }
