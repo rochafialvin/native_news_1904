@@ -23,6 +23,7 @@ export default function ProfileScreen({navigation}) {
     name: '',
     bio: '',
     website: '',
+    photo: '',
   });
 
   useEffect(() => {
@@ -33,8 +34,8 @@ export default function ProfileScreen({navigation}) {
     try {
       const res = await axios.get(`/users/${id}`);
 
-      const {username, name, bio, website} = res.data;
-      setProfile({username, name, bio, website});
+      const {username, name, bio, website, photo} = res.data;
+      setProfile({username, name, bio, website, photo});
     } catch (error) {
       alert('Terjadi kesalahan');
       console.log({error});

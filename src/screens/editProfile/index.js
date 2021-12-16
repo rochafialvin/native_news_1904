@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import {Input, Image, Text, Heading, Flex, HStack, View} from 'native-base';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import {CommonActions} from '@react-navigation/native';
+import DocumentPicker from 'react-native-document-picker';
 
 export default function EditProfileScreen({route, navigation}) {
   const {profile} = route.params;
@@ -9,6 +10,25 @@ export default function EditProfileScreen({route, navigation}) {
   const [name, setName] = useState(profile.name);
   const [website, setWebsite] = useState(profile.website);
   const [bio, setBio] = useState(profile.bio);
+  const [photo, setPhoto] = useState(profile.photo);
+  console.log({photo});
+
+  const onChangePicturePress = async () => {
+    try {
+      const res = await DocumentPicker.pick({
+        type: [DocumentPicker.types.images],
+      });
+      setPhoto(res[0].uri);
+    } catch (err) {
+      if (DocumentPicker.isCancel(err)) {
+        alert('Anda telah menekan tombol cancel');
+        // User cancelled the picker, exit any dialogs or menus and move on
+      } else {
+        alert('Terjadi masalah');
+        throw err;
+      }
+    }
+  };
 
   return (
     <Flex flex="1" px="2" py="3">
@@ -28,15 +48,17 @@ export default function EditProfileScreen({route, navigation}) {
       <Flex align="center" my="5">
         <Image
           style={{width: 100, height: 100}}
+          key={photo}
           mx="auto"
           rounded="full"
-          source={{
-            uri: 'https://wallpaperaccess.com/full/317501.jpg',
-          }}
+          source={{uri: photo}}
           alt="Alternate Text"
           size="xl"
         />
-        <Text style={{color: 'blue'}} fontSize="16">
+        <Text
+          style={{color: 'blue'}}
+          fontSize="16"
+          onPress={onChangePicturePress}>
           Change your profile picture
         </Text>
       </Flex>
