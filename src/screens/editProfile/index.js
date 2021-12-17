@@ -15,10 +15,15 @@ export default function EditProfileScreen({route, navigation}) {
   const [bio, setBio] = useState(profile.bio);
   const [photo, setPhoto] = useState(profile.photo);
 
-  const onChangePicturePress = async () => {
+  const onChangePicturePress = async type => {
     try {
-      const res = await launchCamera({saveToPhotos: true});
-      setPhoto(res.assets[0].uri);
+      let res;
+      if (type === 'camera') {
+        res = await launchCamera({saveToPhotos: true});
+      } else {
+        res = await launchImageLibrary({saveToPhotos: true});
+      }
+      if (!res.didCancel) setPhoto(res.assets[0].uri);
     } catch (error) {
       alert('Terjadi kesalahan');
       console.log({error});
@@ -66,12 +71,24 @@ export default function EditProfileScreen({route, navigation}) {
           alt="Alternate Text"
           size="xl"
         />
-        <Text
-          style={{color: 'blue'}}
-          fontSize="16"
-          onPress={onChangePicturePress}>
-          Change your profile picture
-        </Text>
+        <HStack space="2">
+          <Text
+            style={{color: 'blue'}}
+            fontSize="16"
+            onPress={() => {
+              onChangePicturePress('camera');
+            }}>
+            Camera
+          </Text>
+          <Text
+            style={{color: 'blue'}}
+            fontSize="16"
+            onPress={() => {
+              onChangePicturePress('gallery');
+            }}>
+            Gallery
+          </Text>
+        </HStack>
       </Flex>
       <Flex>
         <Input
