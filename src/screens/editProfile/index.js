@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import axios from '../../config/axios';
 import {useSelector} from 'react-redux';
 import {Input, Image, Text, Heading, Flex, HStack, View} from 'native-base';
@@ -39,7 +39,7 @@ export default function EditProfileScreen({route, navigation}) {
         bio,
         photo,
       });
-      alert('Berhasil update data');
+      navigation.dispatch(CommonActions.goBack());
     } catch (error) {
       alert('Terjadi masalah');
       console.log({error});

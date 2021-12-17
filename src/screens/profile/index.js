@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useCallback, useState} from 'react';
 import {
   Flex,
   View,
@@ -10,6 +10,7 @@ import {
   HStack,
 } from 'native-base';
 import axios from '../../config/axios';
+import {useFocusEffect} from '@react-navigation/native';
 import {useDispatch, useSelector} from 'react-redux';
 import {logoutActionCreator} from '../../store/actions';
 import EncryptedStorage from 'react-native-encrypted-storage';
@@ -26,9 +27,11 @@ export default function ProfileScreen({navigation}) {
     photo: '',
   });
 
-  useEffect(() => {
-    fetchProfile();
-  }, []);
+  useFocusEffect(
+    useCallback(() => {
+      fetchProfile();
+    }, []),
+  );
 
   const fetchProfile = async () => {
     try {
