@@ -4,7 +4,7 @@ import {useSelector} from 'react-redux';
 import {Input, Image, Text, Heading, Flex, HStack, View} from 'native-base';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import {CommonActions} from '@react-navigation/native';
-import DocumentPicker from 'react-native-document-picker';
+import {launchCamera, launchImageLibrary} from 'react-native-image-picker';
 
 export default function EditProfileScreen({route, navigation}) {
   const {profile} = route.params;
@@ -17,18 +17,11 @@ export default function EditProfileScreen({route, navigation}) {
 
   const onChangePicturePress = async () => {
     try {
-      const res = await DocumentPicker.pick({
-        type: [DocumentPicker.types.images],
-      });
-      setPhoto(res[0].uri);
-    } catch (err) {
-      if (DocumentPicker.isCancel(err)) {
-        alert('Anda telah menekan tombol cancel');
-        // User cancelled the picker, exit any dialogs or menus and move on
-      } else {
-        alert('Terjadi masalah');
-        throw err;
-      }
+      const res = await launchImageLibrary({saveToPhotos: true});
+      setPhoto(res.assets[0].uri);
+    } catch (error) {
+      alert('Terjadi kesalahan');
+      console.log({error});
     }
   };
 
