@@ -19,6 +19,7 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 export default function ProfileScreen({navigation}) {
   const dispacth = useDispatch();
   const id = useSelector(state => state.auth.id);
+  const [favorites, setFavorites] = useState([]);
   const [profile, setProfile] = useState({
     username: '',
     name: '',
@@ -35,10 +36,12 @@ export default function ProfileScreen({navigation}) {
 
   const fetchProfile = async () => {
     try {
-      const res = await axios.get(`/users/${id}`);
-
-      const {username, name, bio, website, photo} = res.data;
+      const resUser = await axios.get(`/users/${id}`);
+      const {username, name, bio, website, photo} = resUser.data;
       setProfile({username, name, bio, website, photo});
+
+      const resFavorite = await axios.get('/favourites', {userId: id});
+      setFavorites(resFavorite.data);
     } catch (error) {
       alert('Terjadi kesalahan');
       console.log({error});

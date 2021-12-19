@@ -1,0 +1,9 @@
+- Menggunakan library react-native-image-picker untuk mengambil gambar baik dari kamera maupun library.
+- useEffect tidak berjalan seperti pada website yg menggunakan react karena cara kerja navigasi yang berbeda, sehingga kita menggunakan useFocusEffect dari react-navigation
+- Styling
+  - HTML: menggunakan attribute <div class="btn" style="margin-left: 10px; justify-content: space-between " ></div>
+  - JSX : menggunakan attribute <div className style={ { marginLeft: 10, justifyContent: 'space-between' } }></div>
+  - Library Component (react-strap, native-base, material-ui) : 
+    - menggunakan attribute style layaknya menggunakan JSX seperti <Box style={ { marginLeft: 10, justifyContent: 'space-between' } />
+    - menggunakan attribute yang disediakan seperti <Box ml=10 justify='space-between' />
+- Routing (react-router-dom) : Kita dapat menggunakan komponent Link dari rrd untuk wrap / membungkus jsx. Agar memiliki tampilan sesuai jsx yang kita buat namun memiliki fungsi untuk pindah halaman menggunakan komponen Link 
