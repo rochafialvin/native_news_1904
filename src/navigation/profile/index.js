@@ -4,7 +4,6 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 const {Navigator, Screen} = createNativeStackNavigator();
 
 import ProfileScreen from '../../screens/profile';
-import FavoriteScreen from '../../screens/profile';
 import EditProfileScreen from '../../screens/editProfile';
 
 export default function ProfileStackNavigation() {
@@ -20,7 +19,6 @@ export default function ProfileStackNavigation() {
         component={EditProfileScreen}
         options={{headerShown: false}}
       />
-      <Screen name="Favorite" component={FavoriteScreen} />
     </Navigator>
   );
 }

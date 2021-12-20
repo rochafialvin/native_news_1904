@@ -3,9 +3,11 @@ import {Box, Text} from 'native-base';
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
+import FavoriteScreen from '../../screens/favorite';
+
 const {Navigator, Screen} = createMaterialTopTabNavigator();
 
-function TemplateA() {
+function ReelScreen() {
   return (
     <Box flex="1">
       <Text
@@ -15,12 +17,12 @@ function TemplateA() {
           marginTop: 'auto',
           marginBottom: 'auto',
         }}>
-        Template A
+        Reel Screen
       </Text>
     </Box>
   );
 }
-function TemplateB() {
+function TagScreen() {
   return (
     <Box flex="1">
       <Text
@@ -30,22 +32,7 @@ function TemplateB() {
           marginTop: 'auto',
           marginBottom: 'auto',
         }}>
-        Template B
-      </Text>
-    </Box>
-  );
-}
-function TemplateC() {
-  return (
-    <Box flex="1">
-      <Text
-        style={{
-          textAlign: 'center',
-          fontWeight: 'bold',
-          marginTop: 'auto',
-          marginBottom: 'auto',
-        }}>
-        Template C
+        Tag Screen
       </Text>
     </Box>
   );
@@ -65,15 +52,15 @@ export default function FeedNavigation() {
 
           // name yang kita gunakan pada component screen dibawah
           switch (route.name) {
-            case 'TemplateA':
+            case 'Favorite':
               iconName = focused ? 'heart' : 'heart-outline';
               break;
 
-            case 'TemplateB':
+            case 'Reel':
               iconName = focused ? 'play' : 'play-outline';
               break;
 
-            case 'TemplateC':
+            case 'Tag':
               iconName = focused ? 'tag' : 'tag-outline';
               break;
           }
@@ -81,9 +68,9 @@ export default function FeedNavigation() {
           return <Icon name={iconName} color={color} size={25} />;
         },
       })}>
-      <Screen name="TemplateA" component={TemplateA} />
-      <Screen name="TemplateB" component={TemplateB} />
-      <Screen name="TemplateC" component={TemplateC} />
+      <Screen name="Favorite" component={FavoriteScreen} />
+      <Screen name="Reel" component={ReelScreen} />
+      <Screen name="Tag" component={TagScreen} />
     </Navigator>
   );
 }
