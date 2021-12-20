@@ -1,6 +1,7 @@
 import React, {useState, useCallback} from 'react';
 import {useFocusEffect} from '@react-navigation/native';
 import {useSelector} from 'react-redux';
+
 import {Box, Image, Text, Flex, View} from 'native-base';
 import {useWindowDimensions} from 'react-native';
 import axios from '../../config/axios';

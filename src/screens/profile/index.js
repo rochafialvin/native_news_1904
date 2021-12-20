@@ -11,6 +11,7 @@ import {
 } from 'native-base';
 import axios from '../../config/axios';
 import {useFocusEffect} from '@react-navigation/native';
+import {Box} from 'native-base';
 import {useDispatch, useSelector} from 'react-redux';
 import {logoutActionCreator} from '../../store/actions';
 import EncryptedStorage from 'react-native-encrypted-storage';
