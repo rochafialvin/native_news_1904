@@ -117,7 +117,7 @@ export default function ProfileScreen({navigation}) {
         <Text color="blue.900">{profile.website}</Text>
       </Stack>
       <Button
-        mt="2"
+        my="2"
         w="100%"
         py="1"
         h="8"

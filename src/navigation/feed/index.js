@@ -1,6 +1,7 @@
 import React from 'react';
 import {Box, Text} from 'native-base';
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 const {Navigator, Screen} = createMaterialTopTabNavigator();
 
@@ -52,7 +53,34 @@ function TemplateC() {
 
 export default function FeedNavigation() {
   return (
-    <Navigator>
+    <Navigator
+      screenOptions={({route}) => ({
+        tabBarStyle: {
+          height: 50,
+          backgroundColor: 'blue',
+        },
+        tabBarIcon: ({focused}) => {
+          let iconName;
+          const color = focused ? '#ffffff' : 'gray';
+
+          // name yang kita gunakan pada component screen dibawah
+          switch (route.name) {
+            case 'TemplateA':
+              iconName = focused ? 'heart' : 'heart-outline';
+              break;
+
+            case 'TemplateB':
+              iconName = focused ? 'play' : 'play-outline';
+              break;
+
+            case 'TemplateC':
+              iconName = focused ? 'tag' : 'tag-outline';
+              break;
+          }
+
+          return <Icon name={iconName} color={color} size={25} />;
+        },
+      })}>
       <Screen name="TemplateA" component={TemplateA} />
       <Screen name="TemplateB" component={TemplateB} />
       <Screen name="TemplateC" component={TemplateC} />
