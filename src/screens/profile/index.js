@@ -15,6 +15,7 @@ import {useDispatch, useSelector} from 'react-redux';
 import {logoutActionCreator} from '../../store/actions';
 import EncryptedStorage from 'react-native-encrypted-storage';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import FeedNavigation from '../../navigation/feed';
 
 export default function ProfileScreen({navigation}) {
   const dispacth = useDispatch();
@@ -76,15 +77,17 @@ export default function ProfileScreen({navigation}) {
       </Flex>
       <HStack my="5">
         <View width="30%">
-          <Image
-            style={{width: 100, height: 100}}
-            mx="auto"
-            rounded="full"
-            key={profile.photo}
-            source={{uri: profile.photo}}
-            alt="Alternate Text"
-            size="xl"
-          />
+          {profile.photo ? (
+            <Image
+              style={{width: 100, height: 100}}
+              mx="auto"
+              rounded="full"
+              key={profile.photo}
+              source={{uri: profile.photo}}
+              alt="Alternate Text"
+              size="xl"
+            />
+          ) : null}
         </View>
 
         <Flex direction="row" w="70%" justify="space-around">
@@ -126,6 +129,8 @@ export default function ProfileScreen({navigation}) {
         }}>
         <Text color="black">Edit Profile</Text>
       </Button>
+
+      <FeedNavigation />
     </Flex>
   );
 }
