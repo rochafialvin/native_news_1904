@@ -71,6 +71,36 @@
       "content": "Katalogpromosi.com Ada Sebuah Situs yang bertujuan memberikan informasi promosi terupdate khusus buat kalian para pencinta Diskon di Indonesia\r\nMulai dari Info Diskon, Promo, Sale, Event terkini hing… [+198 chars]",
       "userId": 1,
       "id": 4
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "Viva.co.id"
+      },
+      "author": "Luzman Rifqi Karami",
+      "title": "Atasi Persikabo, Persija Jakarta Keluar dari Tren Negatif",
+      "description": "Berita Atasi Persikabo, Persija Jakarta Keluar dari Tren Negatif terbaru hari ini 2021-12-03 22:40:48 dari sumber yang terpercaya",
+      "url": "https://www.viva.co.id/bola/liga-indonesia/1428992-atasi-persikabo-persija-jakarta-keluar-dari-tren-negatif",
+      "urlToImage": "https://thumb.viva.co.id/media/frontend/thumbs3/2021/12/03/61aa35232f263-pemain-persija-jakarta-rayakan-gol-rohit-chand_665_374.jpg",
+      "publishedAt": "2021-12-03T15:40:48Z",
+      "content": "VIVA   Persija Jakarta akhirnya keluar dari tren negatif usai kalah dalam dua laga beruntun. Anak asuh Angelo Alessio menang tipis 1-0 atas Persikabo 1973 dalam duel Liga 1 yang diwarnai hujan deras,… [+667 chars]",
+      "userId": 1,
+      "id": 5
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "Viva.co.id"
+      },
+      "author": "Bayu Nugraha",
+      "title": "JakPro Beri Kabar Terbaru Lokasi Formula E Jakarta",
+      "description": "JakPro menyatakan penentuan lokasi balap mobil listrik Formula E&nbsp;Jakarta menunggu keputusan Federasi Automobil Internasional (FIA).",
+      "url": "https://www.viva.co.id/berita/metro/1425984-jakpro-beri-kabar-terbaru-lokasi-formula-e-jakarta",
+      "urlToImage": "https://thumb.viva.co.id/media/frontend/thumbs3/2021/10/16/616a7f07caa31-formula-e_665_374.jpg",
+      "publishedAt": "2021-11-24T02:00:04Z",
+      "content": "VIVA  Badan Usaha Milik Daerah DKI Jakarta, PT Jakarta Propertindo atau JakPro (Perseroda) menyatakan penentuan lokasi balap mobil listrik Formula E menunggu keputusan Federasi Automobil Internasiona… [+831 chars]",
+      "userId": 1,
+      "id": 6
     }
   ]
 }

@@ -20,7 +20,6 @@ import FeedNavigation from '../../navigation/feed';
 export default function ProfileScreen({navigation}) {
   const dispacth = useDispatch();
   const id = useSelector(state => state.auth.id);
-  const [favorites, setFavorites] = useState([]);
   const [profile, setProfile] = useState({
     username: '',
     name: '',
@@ -40,9 +39,6 @@ export default function ProfileScreen({navigation}) {
       const resUser = await axios.get(`/users/${id}`);
       const {username, name, bio, website, photo} = resUser.data;
       setProfile({username, name, bio, website, photo});
-
-      const resFavorite = await axios.get('/favourites', {userId: id});
-      setFavorites(resFavorite.data);
     } catch (error) {
       alert('Terjadi kesalahan');
       console.log({error});
@@ -67,7 +63,7 @@ export default function ProfileScreen({navigation}) {
   };
 
   return (
-    <Flex flex="1" px="2" py="3">
+    <Flex flex="1" py="3" style={{paddingHorizontal: 7}}>
       <Flex direction="row" justify="space-between">
         <Heading>{profile.username}</Heading>
         <HStack space="4">
