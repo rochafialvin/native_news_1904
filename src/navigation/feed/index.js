@@ -68,7 +68,7 @@ export default function FeedNavigation() {
           return <Icon name={iconName} color={color} size={25} />;
         },
       })}>
-      <Screen name="Favorite" component={FavoriteScreen} />
+      {/* <Screen name="Favorite" component={FavoriteScreen} /> */}
       <Screen name="Reel" component={ReelScreen} />
       <Screen name="Tag" component={TagScreen} />
     </Navigator>

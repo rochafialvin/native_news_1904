@@ -1,13 +1,5 @@
 import React, {useState} from 'react';
-import {
-  Box,
-  Text,
-  Button,
-  Input,
-  FlatList,
-  Flex,
-  ScrollView,
-} from 'native-base';
+import {Button, Input, FlatList, Flex} from 'native-base';
 import {apiNews} from '../../config/axios';
 
 import ArticleItem from './components/ArticleItem';

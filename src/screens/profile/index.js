@@ -130,7 +130,7 @@ export default function ProfileScreen({navigation}) {
           <Text color="black">Edit Profile</Text>
         </Button>
 
-        <FavoriteScreen />
+        <FavoriteScreen navigation={navigation} />
       </Flex>
     </ScrollView>
   );
