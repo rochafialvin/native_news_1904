@@ -13,7 +13,13 @@ export default function RegisterScreen({navigation}) {
 
   const onRegisterPress = async () => {
     try {
-      await axios.post('/users', {username, email, password});
+      await axios.post('/users', {
+        username,
+        email,
+        password,
+        photo:
+          'https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fcdn.onlinewebfonts.com%2Fsvg%2Fimg_518099.png&f=1&nofb=1',
+      });
       alert('Berhasil register');
     } catch (error) {}
   };

@@ -9,6 +9,22 @@
       "bio": "Kalau orang lain tidak bisa. Apalagi saya",
       "photo": "file:///data/user/0/com.native_news_1904/cache/rn_image_picker_lib_temp_fcd6657d-9380-491e-ac3b-d5a29d163378.jpg",
       "id": 1
+    },
+    {
+      "username": "newuser",
+      "email": "newuser@mail.com",
+      "password": "password",
+      "id": 2
+    },
+    {
+      "username": "regi",
+      "email": "regi@mail.com",
+      "password": "password",
+      "photo": "file:///data/user/0/com.native_news_1904/cache/rn_image_picker_lib_temp_ae06e22a-d061-4d40-9e7b-831535d1e988.jpg",
+      "id": 3,
+      "name": "Regi Saputra",
+      "website": "www.regi.com",
+      "bio": "R ere ge i gi, saputra"
     }
   ],
   "favourites": [
@@ -161,6 +177,21 @@
       "content": "VIVA  Elkan Baggott menyatakan dirinya siap membela Timnas Indonesia dalam laga terakhir Grup B Piala AFF 2020. Skuad Garuda bakal menghadapi Malaysia di Stadion National, Singapura, Minggu 19 Desemb… [+802 chars]",
       "userId": 1,
       "id": 10
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "Viva.co.id"
+      },
+      "author": "Syahrul Ansyari, Eduward Ambarita",
+      "title": "Jokowi Janjikan Relokasi Rumah Warga Korban Erupsi Semeru",
+      "description": "Presiden Jokowi menyampaikan duka cita mendalam atas korban jiwa yang meninggal dunia akibat erupsi Gunung Semeru di Lumajang, Jawa Timur.",
+      "url": "https://www.viva.co.id/berita/nasional/1429904-jokowi-janjikan-relokasi-rumah-warga-korban-erupsi-semeru",
+      "urlToImage": "https://thumb.viva.co.id/media/frontend/thumbs3/2021/12/07/61aef5c58af56-presiden-jokowi-di-tempat-pengungsian-korban-erupsi-gunung-semeru_665_374.jpeg",
+      "publishedAt": "2021-12-07T07:02:26Z",
+      "content": "VIVA - Presiden Joko Widodo menjanjikan relokasi rumah warga yang terdampak akibat erupsi Gunung Semeru, Lumajang, Jawa Timur. Jokowi mengaku mendapat laporan kurang lebih 2.000-an rumah yang harus d… [+499 chars]",
+      "userId": 3,
+      "id": 11
     }
   ]
 }

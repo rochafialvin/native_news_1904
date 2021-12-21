@@ -32,10 +32,11 @@ export default function FavoriteScreen({navigation}) {
     return favorites.map(favorite => {
       return (
         <Pressable
+          key={favorite.title}
           onPress={() => {
             navigation.navigate('Detail', {article: favorite});
           }}>
-          <Box key={favorite.title} w={favSize} h={favSize} bg="blueGray.300">
+          <Box w={favSize} h={favSize} bg="blueGray.300">
             <Image
               style={{width: '100%', height: '100%'}}
               key={favorite.urlToImage}

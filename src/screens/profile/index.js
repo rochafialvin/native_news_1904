@@ -7,6 +7,7 @@ import {
   Button,
   Stack,
   Heading,
+  Modal,
   HStack,
   ScrollView,
 } from 'native-base';
@@ -16,12 +17,24 @@ import {useDispatch, useSelector} from 'react-redux';
 import {logoutActionCreator} from '../../store/actions';
 import EncryptedStorage from 'react-native-encrypted-storage';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import FeedNavigation from '../../navigation/feed';
 import FavoriteScreen from '../favorite';
+
+function CustomModal({isModalOpen, setIsModalOpen, onLogoutPress}) {
+  return (
+    <Modal
+      isOpen={isModalOpen}
+      onClose={() => {
+        setIsModalOpen(false);
+      }}>
+      <Button onPress={onLogoutPress}>Logout</Button>
+    </Modal>
+  );
+}
 
 export default function ProfileScreen({navigation}) {
   const dispacth = useDispatch();
   const id = useSelector(state => state.auth.id);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const [profile, setProfile] = useState({
     username: '',
     name: '',
@@ -71,7 +84,13 @@ export default function ProfileScreen({navigation}) {
           <Heading>{profile.username}</Heading>
           <HStack space="4">
             <Icon name="plus-box-outline" size={30} />
-            <Icon name="menu" size={30} />
+            <Icon
+              name="menu"
+              size={30}
+              onPress={() => {
+                setIsModalOpen(true);
+              }}
+            />
           </HStack>
         </Flex>
         <HStack my="5">
@@ -132,6 +151,11 @@ export default function ProfileScreen({navigation}) {
 
         <FavoriteScreen navigation={navigation} />
       </Flex>
+      <CustomModal
+        isModalOpen={isModalOpen}
+        setIsModalOpen={setIsModalOpen}
+        onLogoutPress={onLogoutPress}
+      />
     </ScrollView>
   );
 }
