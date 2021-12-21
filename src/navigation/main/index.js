@@ -1,46 +1,20 @@
 import React from 'react';
-import {createMaterialBottomTabNavigator} from '@react-navigation/material-bottom-tabs';
-import {Text} from 'native-base';
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
-import HomeStackNavigation from '../home';
-import ProfileStackNavigation from '../profile';
+const {Navigator, Screen} = createNativeStackNavigator();
 
-const {Navigator, Screen} = createMaterialBottomTabNavigator();
+import SubmainNavigation from '../submain';
+import DetailScreen from '../../screens/detail';
 
 export default function MainNavigation() {
   return (
-    <Navigator
-      initialRouteName="HomeStack"
-      screenOptions={({route}) => ({
-        tabBarIcon: ({focused}) => {
-          let iconName;
-          const color = focused ? '#ffffff' : 'gray';
-
-          // name yang kita gunakan pada component screen dibawah
-          switch (route.name) {
-            case 'HomeStack':
-              iconName = focused ? 'home' : 'home-outline';
-              break;
-
-            case 'ProfileStack':
-              iconName = focused ? 'account' : 'account-outline';
-              break;
-          }
-
-          return <Icon name={iconName} color={color} size={25} />;
-        },
-      })}>
+    <Navigator>
       <Screen
-        name="HomeStack"
-        component={HomeStackNavigation}
-        options={{tabBarLabel: 'Home'}}
+        name="SubmainNavigation"
+        component={SubmainNavigation}
+        options={{headerShown: false}}
       />
-      <Screen
-        name="ProfileStack"
-        component={ProfileStackNavigation}
-        options={{tabBarLabel: 'Profile'}}
-      />
+      <Screen name="Detail" component={DetailScreen} />
     </Navigator>
   );
 }
